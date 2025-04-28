@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Pet Taxi Armenia</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +23,8 @@
 
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="./images/logoIcon.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -34,28 +36,26 @@
 					<p class="mb-0 phone pl-md-2">
 						<a href="tel:+37433270697" class="mr-2">
 							<span class="fa fa-phone mr-1"></span> +374 33 270697
-						  </a>
-						  > <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
+						</a>
+						> <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
 					</p>
 				</div>
 				<div class="">
 					<div class="social-media">
 						<p class="mb-0 d-flex">
-							<a href="https://www.facebook.com/profile.php?id=61562296816316"
-							target="_blank"
-							class="d-flex align-items-center justify-content-center">
-						   <span class="fa fa-facebook">
-							 <i class="sr-only">Facebook</i>
-						   </span>
-						 </a>
+							<a href="https://www.facebook.com/profile.php?id=61562296816316" target="_blank"
+								class="d-flex align-items-center justify-content-center">
+								<span class="fa fa-facebook">
+									<i class="sr-only">Facebook</i>
+								</span>
+							</a>
 
-						 <a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo"
-							target="_blank"
-							class="d-flex align-items-center justify-content-center">
-						   <span class="fa fa-instagram">
-							 <i class="sr-only">Instagram</i>
-						   </span>
-						 </a>
+							<a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo" target="_blank"
+								class="d-flex align-items-center justify-content-center">
+								<span class="fa fa-instagram">
+									<i class="sr-only">Instagram</i>
+								</span>
+							</a>
 
 						</p>
 					</div>
@@ -173,60 +173,59 @@
 			<div class="row d-md-flex justify-content-end">
 				<div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
 					<h2 class="mb-4">Free Consultation</h2>
-					<form action="#" class="appointment">
+					<form action="#" class="appointment" id="appointmentForm">
 						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Անուն *" required>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="tel" name="phone" class="form-control" placeholder="Հեռախոսահամար *"
+										required>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="date" id="dateInput" name="date" class="form-control"
+										placeholder="Ամսաթիվ *" required>
+
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="time" id="timeInput" name="time" class="form-control" required>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="from_address" class="form-control"
+										placeholder="Որտեղից վերցնել *" required>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="to_address" class="form-control"
+										placeholder="Որտեղ տանել *" required>
+								</div>
+							</div>
+
 							<div class="col-md-12">
 								<div class="form-group">
-									<div class="form-field">
-										<div class="select-wrap">
-											<div class="icon"><span class="fa fa-chevron-down"></span></div>
-											<select name="" id="" class="form-control">
-												<option value="">Select services</option>
-												<option value="">Cat Sitting</option>
-												<option value="">Dog Walk</option>
-												<option value="">Pet Spa</option>
-												<option value="">Pet Grooming</option>
-												<option value="">Pet Daycare</option>
-											</select>
-										</div>
-									</div>
+									<textarea name="message" id="" cols="30" rows="5" class="form-control"
+										placeholder="Մեկնաբանություն (ըստ ցանկության)"></textarea>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Name">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Vehicle number">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="input-wrap">
-										<div class="icon"><span class="fa fa-calendar"></span></div>
-										<input type="text" class="form-control appointment_date" placeholder="Date">
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="input-wrap">
-										<div class="icon"><span class="fa fa-clock-o"></span></div>
-										<input type="text" class="form-control appointment_time" placeholder="Time">
-									</div>
-								</div>
-							</div>
+
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea name="" id="" cols="30" rows="7" class="form-control"
-										placeholder="Message"></textarea>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+									<input type="submit" value="Ուղարկել" class="btn btn-primary py-3 px-4">
 								</div>
 							</div>
 						</div>
@@ -243,10 +242,12 @@
 					<h2 class="footer-heading">Petsitting</h2>
 					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 					<ul class="ftco-footer-social p-0">
-						<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61562296816316" target="_blank" data-toggle="tooltip" data-placement="top"
-							title="Facebook"><span class="fa fa-facebook"></span></a></li>
-					<li class="ftco-animate"><a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo" target="_blank" data-toggle="tooltip" data-placement="top"
-							title="Instagram"><span class="fa fa-instagram"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61562296816316"
+								target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook"><span
+									class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo"
+								target="_blank" data-toggle="tooltip" data-placement="top" title="Instagram"><span
+									class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -325,7 +326,7 @@
 				stroke="#F96D00" />
 		</svg></div>
 
-
+	<script src="./script.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
