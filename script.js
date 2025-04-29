@@ -155,3 +155,21 @@ form.addEventListener("submit", function (e) {
       alert("Սխալ տեղի ունեցավ հաղորդագրություն ուղարկելիս։");
     });
 });
+
+
+
+  const currentPage = window.location.pathname
+
+  document.querySelectorAll(".lang-link").forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop();
+    
+    
+    
+    if (currentPage === linkPage) {
+      link.classList.add("activeLink");
+    }
+  });
+
+
+
+
