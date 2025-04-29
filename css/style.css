@@ -11692,6 +11692,20 @@ h5,
   justify-content: center;
 }
 
+.lang-linkru.activeLinkru {
+  background-color: #ff954d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-linkus.activeLinkus{
+  background-color: #ff954d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .ftco-navbar-light {
   background: #fff !important;

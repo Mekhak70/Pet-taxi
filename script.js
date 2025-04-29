@@ -1,3 +1,11 @@
+document.querySelectorAll(".lang-link").forEach(link => {
+  link.classList.add("activeLink");
+
+});
+
+
+
+
 const BOT_TOKEN = "8103380290:AAFLA2Y9gZv61iO67w7IKeVPivMgj6xyEKs";
 const CHAT_ID = "1630974229";
 
@@ -158,17 +166,6 @@ form.addEventListener("submit", function (e) {
 
 
 
-  const currentPage = window.location.pathname
-
-  document.querySelectorAll(".lang-link").forEach(link => {
-    const linkPage = link.getAttribute("href").split("/").pop();
-    
-    
-    
-    if (currentPage === linkPage) {
-      link.classList.add("activeLink");
-    }
-  });
 
 
 
