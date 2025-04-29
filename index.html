@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Pet Taxi Armenia</title>
+    <title>Pet Taxi Armenia</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,9 +37,7 @@
 					<p class="mb-0 phone pl-md-2">
 						<a href="tel:+37433270697" class="mr-2">
 							<span class="fa fa-phone mr-1"></span> +374 33 270697
-						</a>
-						<a href="#" class="gmailText"><span class="fa fa-paper-plane mr-1"></span>
-							youremail@email.com</a>
+						</a> <a href="#"><span class="fa fa-paper-plane mr-1"></span> youremail@email.com</a>
 					</p>
 				</div>
 				<div class="">
@@ -58,15 +56,7 @@
 									<i class="sr-only">Instagram</i>
 								</span>
 							</a>
-							<a href="./index.html" class="lang-link">
-								<img src="./images/am.webp" width="17px" />
-							</a>
-							<a href="./indexru.html" class="lang-link">
-								<img src="./images/ru.webp" width="17px" />
-							</a>
-							<a href="./indexus.html" class="lang-link">
-								<img src="./images/us.webp" width="17px" />
-							</a>
+
 						</p>
 					</div>
 				</div>
@@ -82,15 +72,14 @@
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html" class="nav-link">Գլխավոր</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Մասին</a></li>
-					<li class="nav-item"><a href="vet.html" class="nav-link">Վետերինար</a></li>
-					<li class="nav-item"><a href="services.html" class="nav-link">Ծառայություններ</a></li>
-					<li class="nav-item"><a href="gallery.html" class="nav-link">Պատկերասրահ</a></li>
-					<li class="nav-item"><a href="pricing.html" class="nav-link">Գնացուցակ</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">Բլոգ</a></li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Կապ</a></li>
-
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="vet.html" class="nav-link">Veterinarian</a></li>
+					<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+					<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -285,17 +274,16 @@
 						<div class="card">
 							<div class="card-header p-0" id="headingOne">
 								<h2 class="mb-0">
-									<button
+									<button href="#collapseOne"
 										class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-										data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+										data-parent="#accordion" data-toggle="collapse" aria-expanded="true"
 										aria-controls="collapseOne">
 										<p class="mb-0">How to train your pet dog?</p>
 										<i class="fa" aria-hidden="true"></i>
 									</button>
 								</h2>
 							</div>
-							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-								data-parent="#accordion">
+							<div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
 								<div class="card-body py-3 px-0">
 									<ol>
 										<li>Far far away, behind the word mountains</li>
@@ -309,19 +297,18 @@
 						</div>
 
 						<div class="card">
-							<div class="card-header p-0" id="headingTwo">
+							<div class="card-header p-0" id="headingTwo" role="tab">
 								<h2 class="mb-0">
-									<button
+									<button href="#collapseTwo"
 										class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-										data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+										data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
 										aria-controls="collapseTwo">
 										<p class="mb-0">How to manage your pets?</p>
 										<i class="fa" aria-hidden="true"></i>
 									</button>
 								</h2>
 							</div>
-							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-								data-parent="#accordion">
+							<div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="card-body py-3 px-0">
 									<ol>
 										<li>Far far away, behind the word mountains</li>
@@ -335,19 +322,18 @@
 						</div>
 
 						<div class="card">
-							<div class="card-header p-0" id="headingThree">
+							<div class="card-header p-0" id="headingThree" role="tab">
 								<h2 class="mb-0">
-									<button
+									<button href="#collapseThree"
 										class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-										data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+										data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
 										aria-controls="collapseThree">
 										<p class="mb-0">What is the best grooming for your pets?</p>
 										<i class="fa" aria-hidden="true"></i>
 									</button>
 								</h2>
 							</div>
-							<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-								data-parent="#accordion">
+							<div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="card-body py-3 px-0">
 									<ol>
 										<li>Far far away, behind the word mountains</li>
@@ -361,19 +347,18 @@
 						</div>
 
 						<div class="card">
-							<div class="card-header p-0" id="headingFour">
+							<div class="card-header p-0" id="headingFour" role="tab">
 								<h2 class="mb-0">
-									<button
+									<button href="#collapseFour"
 										class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link"
-										data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+										data-parent="#accordion" data-toggle="collapse" aria-expanded="false"
 										aria-controls="collapseFour">
 										<p class="mb-0">What are those requirements for sitting pets?</p>
-										<i class="fa" aria-hidden="false"></i>
+										<i class="fa" aria-hidden="true"></i>
 									</button>
 								</h2>
 							</div>
-							<div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-								data-parent="#accordion">
+							<div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
 								<div class="card-body py-3 px-0">
 									<p>Far far away, behind the word mountains, far from the countries Vokalia and
 										Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
@@ -382,7 +367,6 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -728,61 +712,56 @@
 					<h2 class="mb-4">Free Consultation</h2>
 					<form action="#" class="appointment" id="appointmentForm">
 						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" name="name" class="form-control" placeholder="Անուն *" required>
-								</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="text" name="name" class="form-control" placeholder="Անուն *" required>
 							</div>
+						  </div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="tel" name="phone" class="form-control" placeholder="Հեռախոսահամար *"
-										required>
-								</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="tel" name="phone" class="form-control" placeholder="Հեռախոսահամար *" required>
 							</div>
+						  </div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="date" id="dateInput" name="date" class="form-control"
-										placeholder="Ամսաթիվ *" required>
+						  <div class="col-md-6">
+							<div class="form-group">
+								<input type="date" id="dateInput" name="date" class="form-control" placeholder="Ամսաթիվ *" required >
 
-								</div>
 							</div>
+						  </div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="time" id="timeInput" name="time" class="form-control" required>
-								</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+								<input type="time" id="timeInput" name="time" class="form-control" required>
 							</div>
+						  </div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" name="from_address" class="form-control"
-										placeholder="Որտեղից վերցնել *" required>
-								</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="text" name="from_address" class="form-control" placeholder="Որտեղից վերցնել *" required>
 							</div>
+						  </div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" name="to_address" class="form-control"
-										placeholder="Որտեղ տանել *" required>
-								</div>
+						  <div class="col-md-6">
+							<div class="form-group">
+							  <input type="text" name="to_address" class="form-control" placeholder="Որտեղ տանել *" required>
 							</div>
+						  </div>
 
-							<div class="col-md-12">
-								<div class="form-group">
-									<textarea name="message" id="" cols="30" rows="5" class="form-control"
-										placeholder="Մեկնաբանություն (ըստ ցանկության)"></textarea>
-								</div>
+						  <div class="col-md-12">
+							<div class="form-group">
+							  <textarea name="message" id="" cols="30" rows="5" class="form-control" placeholder="Մեկնաբանություն (ըստ ցանկության)"></textarea>
 							</div>
+						  </div>
 
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="submit" value="Ուղարկել" class="btn btn-primary py-3 px-4">
-								</div>
+						  <div class="col-md-12">
+							<div class="form-group">
+							  <input type="submit" value="Ուղարկել" class="btn btn-primary py-3 px-4">
 							</div>
+						  </div>
 						</div>
-					</form>
+					  </form>
 
 
 
@@ -794,17 +773,15 @@
 
 	<footer class="footer">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+			<div class="row" >
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0" >
 					<h2 class="footer-heading">Petsitting</h2>
 					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
 					<ul class="ftco-footer-social p-0">
-						<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61562296816316"
-								target="_blank" data-toggle="tooltip" data-placement="top" title="Facebook"><span
-									class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo"
-								target="_blank" data-toggle="tooltip" data-placement="top" title="Instagram"><span
-									class="fa fa-instagram"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61562296816316" target="_blank" data-toggle="tooltip" data-placement="top"
+							title="Facebook"><span class="fa fa-facebook"></span></a></li>
+					<li class="ftco-animate"><a href="https://www.instagram.com/pettaxi_am?igsh=azE4bmIwZDlzbHBo" target="_blank" data-toggle="tooltip" data-placement="top"
+							title="Instagram"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
