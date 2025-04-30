@@ -5,7 +5,6 @@ document.querySelectorAll(".lang-link").forEach(link => {
 
 
 
-
 const BOT_TOKEN = "8103380290:AAFLA2Y9gZv61iO67w7IKeVPivMgj6xyEKs";
 const CHAT_ID = "1630974229";
 
@@ -100,6 +99,9 @@ form.addEventListener("submit", function (e) {
     showError(phoneInput, "Խնդրում ենք լրացնել հեռախոսահամարը։");
     hasError = true;
   } else if (phoneInput.value.length < 8) {
+    showError(phoneInput, "Հեռախոսահամարը կարճ է։");
+    hasError = true;
+  } else if (/^(374|0)\d{8}$/.test(phoneInput.value.length) || /^(7|8)\d{10}$/.test(phoneInput.value.length)) {
     showError(phoneInput, "Հեռախոսահամարը կարճ է։");
     hasError = true;
   }
