@@ -95,16 +95,15 @@ form.addEventListener("submit", function (e) {
     showError(nameInput, "Խնդրում ենք լրացնել անունը։");
     hasError = true;
   }
-  if (!phoneInput.value.trim()) {
-    showError(phoneInput, "Խնդրում ենք լրացնել հեռախոսահամարը։");
-    hasError = true;
-  } else if (phoneInput.value.length < 8) {
-    showError(phoneInput, "Հեռախոսահամարը կարճ է։");
-    hasError = true;
-  } else if (/^(374|0)\d{8}$/.test(phoneInput.value.length) || /^(7|8)\d{10}$/.test(phoneInput.value.length)) {
-    showError(phoneInput, "Հեռախոսահամարը կարճ է։");
+  const phoneRegex = /^(?:\+?374|0)([1-9][0-9])\d{6}$|^(?:\+?7|8)?9\d{9}$/;
+  console.log(phoneRegex.test(phoneInput.value), 'phoneRegex.test(phoneInput.value)')
+
+  if (!phoneRegex.test(phoneInput.value)) {
+    console.log(1111);
+    showError(phoneInput, "Հեռախոսահամարը սխալ է։");
     hasError = true;
   }
+
   if (!dateInput.value) {
     showError(dateInput, "Խնդրում ենք ընտրել ամսաթիվ։");
     hasError = true;
@@ -156,7 +155,13 @@ form.addEventListener("submit", function (e) {
     .then((res) => res.json())
     .then((data) => {
       console.log("Ուղարկվեց ✅", data);
-      alert("Հաղորդագրությունը հաջողությամբ ուղարկվեց։");
+
+      const successSound = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_676f020f04.mp3?filename=success-fanfare-trumpets-6185.mp3");
+      successSound.volume = 0.7;
+      successSound.play();
+
+      alert("Ձեր տվյալները հաջողությամբ ուղարկվել են։ Մենք շուտով կապ կհաստատենք Ձեզ հետ։");
+
       form.reset();
       [dateInput, timeInput].forEach((input) => setInputColor(input));
     })
@@ -164,7 +169,8 @@ form.addEventListener("submit", function (e) {
       console.error("Սխալ:", err);
       alert("Սխալ տեղի ունեցավ հաղորդագրություն ուղարկելիս։");
     });
-});
+}
+);
 
 
 
