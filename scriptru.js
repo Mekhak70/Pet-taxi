@@ -159,7 +159,7 @@ form.addEventListener("submit", function (e) {
       const successSound = new Audio("audio/success-340660.mp3");
       successSound.volume = 0.7;
       successSound.play().then(() => {
-        alert("Ձեր տվյալները հաջողությամբ ուղարկվել են։ Մենք շուտով կապ կհաստատենք Ձեզ հետ։");
+        alert("Ваши данные были успешно отправлены. Мы свяжемся с вами в ближайшее время.");
       })
 
       form.reset();
@@ -167,7 +167,7 @@ form.addEventListener("submit", function (e) {
     })
     .catch((err) => {
       console.error("Սխալ:", err);
-      alert("Հաղորդագրությունն ուղարկելու ընթացքում սխալ տեղի ունեցավ։ Խնդրում ենք փորձել կրկին:");
+      alert("Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте снова.");
     });
 }
 );
