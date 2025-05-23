@@ -92,7 +92,7 @@ form.addEventListener("submit", function (e) {
 
   // ստուգումներ
   if (!nameInput.value.trim()) {
-    showError(nameInput, "Խնդրում ենք լրացնել անունը։");
+    showError(nameInput, "Please enter your name.");
     hasError = true;
   }
   const phoneRegex = /^(?:\+?374|0)([1-9][0-9])\d{6}$|^(?:\+?7|8)?9\d{9}$/;
@@ -100,12 +100,12 @@ form.addEventListener("submit", function (e) {
 
   if (!phoneRegex.test(phoneInput.value)) {
     console.log(1111);
-    showError(phoneInput, "Հեռախոսահամարը սխալ է։");
+    showError(phoneInput, "The phone number is incorrect.");
     hasError = true;
   }
 
   if (!dateInput.value) {
-    showError(dateInput, "Խնդրում ենք ընտրել ամսաթիվ։");
+    showError(dateInput, "Please select a date.");
     hasError = true;
   } else {
     // ստուգում ենք ամսաթիվը
@@ -114,20 +114,20 @@ form.addEventListener("submit", function (e) {
     const selectedDate = new Date(dateInput.value);
 
     if (selectedDate < today) {
-      showError(dateInput, "Անցյալ ամսաթիվ ընտրել չեք կարող։");
+      showError(dateInput, "You can not select a past date.");
       hasError = true;
     }
   }
   if (!timeInput.value) {
-    showError(timeInput, "Խնդրում ենք ընտրել ժամ։");
+    showError(timeInput, " Please select a time.");
     hasError = true;
   }
   if (!fromInput.value.trim()) {
-    showError(fromInput, "Խնդրում ենք լրացնել որտեղից վերցնել։");
+    showError(fromInput, "Please enter the pickup location.");
     hasError = true;
   }
   if (!toInput.value.trim()) {
-    showError(toInput, "Խնդրում ենք լրացնել որտեղ տանել։");
+    showError(toInput, "Please enter the drop-off location.");
     hasError = true;
   }
 
