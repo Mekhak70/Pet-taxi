@@ -12,6 +12,7 @@
   </script>
 
 	<title>Pet Taxi Armenia</title>
+	<link rel="manifest" href="manifest.json">
 
 	<meta property="og:title" content="Pet Taxi Armenia" />
 	<meta property="og:description" content="Մենք ապահովում ենք հարմարավետ և անվտանգ փոխադրում՝ կենդանիների համար։" />
@@ -734,7 +735,15 @@
 	<script src="js/main.js"></script>
 
 
-
+	<script>
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker
+			.register('service-worker.js')
+			.then((reg) => console.log('✅ Service Worker գրանցվեց:', reg))
+			.catch((err) => console.error('❌ Service Worker գրանցումը ձախողվեց:', err));
+		}
+	  </script>
+	  
 </body>
 
 </html>

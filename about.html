@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+	<link rel="manifest" href="manifest.json">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X46HGF49KS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -604,7 +604,14 @@
 	<script src="js/scrollax.min.js"></script>
 	<script src="js/main.js"></script>
 
-
+	<script>
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker
+			.register('service-worker.js')
+			.then((reg) => console.log('✅ Service Worker գրանցվեց:', reg))
+			.catch((err) => console.error('❌ Service Worker գրանցումը ձախողվեց:', err));
+		}
+	  </script>
 </body>
 
 </html>
