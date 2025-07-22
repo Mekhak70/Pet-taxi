@@ -1,4 +1,4 @@
-const CACHE_NAME = "pettaxi-cache-v7"; // փոխիր յուրաքանչյուր անգամ ֆայլերի փոփոխման դեպքում
+const CACHE_NAME = "pettaxi-cache-v11";
 
 const urlsToCache = [
   "/",
@@ -36,9 +36,8 @@ const urlsToCache = [
   "/scriptru.js",
   "/scriptus.js",
   "/css/style.css",
-  "/images/logo.png",
+  "/images/logo.png"
 ];
-
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -65,6 +64,9 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // Avoid trying to cache chrome-extension:// and other non-http requests
+  if (!event.request.url.startsWith("http")) return;
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) return cachedResponse;
@@ -81,16 +83,25 @@ self.addEventListener("fetch", (event) => {
 
           const cloned = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, cloned);
+            cache.put(event.request, cloned).catch(() => {});
           });
 
           return networkResponse;
         })
-        .catch(() => {
+        .catch((err) => {
+          console.warn("SW fetch failed:", event.request.url, err);
+        
           if (event.request.mode === "navigate") {
-            return caches.match("/Pet-taxi/offline.html");
+            return new Response(
+              "<h1>Դուք ցանցից անջատված եք</h1><p>Խնդրում ենք ստուգել կապը և կրկին փորձել։</p>",
+              { headers: { "Content-Type": "text/html" } }
+            );
           }
+        
+          // For non-navigate requests (e.g. analytics), just return nothing or fail silently
+          return;
         });
+        
     })
   );
 });
