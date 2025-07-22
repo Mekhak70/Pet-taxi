@@ -521,58 +521,58 @@
 			</div>
 		</div>
 	</footer>
-	<button id="install-btn">Установить приложение</button>
 
-	<style>
-	  #install-btn {
-		display: none;
-		position: fixed;
-		bottom: 20px;
-		right: 20px;
-		background-color: #ff9800;
-		color: white;
-		border: none;
-		border-radius: 12px;
-		padding: 12px 18px;
-		font-size: 14px;
-		font-family: inherit;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-		cursor: pointer;
-		z-index: 9999;
-		transition: background-color 0.3s ease;
-		outline: none;
-	  }
-	
-	  #install-btn:hover {
-		background-color: #e08700;
-	  }
-	</style>
-	
-	<script>
-	  let deferredPrompt;
-	
-	  window.addEventListener("beforeinstallprompt", (e) => {
-		e.preventDefault();
-		deferredPrompt = e;
-		const btn = document.getElementById("install-btn");
-		btn.style.display = "block";
-	
-		btn.addEventListener("click", () => {
-		  btn.style.display = "none";
-		  deferredPrompt.prompt();
-		  deferredPrompt.userChoice.then((choiceResult) => {
-			if (choiceResult.outcome === "accepted") {
-			  console.log("User accepted install");
-			} else {
-			  console.log("User dismissed install");
-			}
-			deferredPrompt = null;
-		  });
-		});
-	  });
-	</script>
-	
-	</script>
+<button id="install-btn">Установить приложение</button>
+
+<style>
+  #install-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-family: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+    outline: none;
+  }
+
+  #install-btn:hover {
+    background-color: #e08700;
+  }
+</style>
+
+<script>
+  let deferredPrompt;
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const btn = document.getElementById("install-btn");
+    btn.style.display = "block";
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User accepted install");
+        } else {
+          console.log("User dismissed install");
+        }
+        deferredPrompt = null;
+      });
+    });
+  });
+</script>
+
 
 
 
