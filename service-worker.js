@@ -64,15 +64,18 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  // Avoid trying to cache chrome-extension:// and other non-http requests
+  // Խուսափում ենք ոչ http(s) ռեսուրսներից (օր. chrome-extension://)
   if (!event.request.url.startsWith("http")) return;
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
+      // Եթե կա cache, վերադարձնում ենք այն
       if (cachedResponse) return cachedResponse;
 
+      // Կամ else fetch ցանցից
       return fetch(event.request)
         .then((networkResponse) => {
+          // Եթե պատասխանն անթույլատրելի է, պարզապես վերադարձնում ենք այն
           if (
             !networkResponse ||
             networkResponse.status !== 200 ||
@@ -81,6 +84,7 @@ self.addEventListener("fetch", (event) => {
             return networkResponse;
           }
 
+          // Կլոնավորում ենք response-ը, քանի որ response-ները պինդ են մեկանգամյա օգտագործման համար
           const cloned = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, cloned).catch(() => {});
@@ -90,18 +94,18 @@ self.addEventListener("fetch", (event) => {
         })
         .catch((err) => {
           console.warn("SW fetch failed:", event.request.url, err);
-        
+
+          // Եթե request-ը navigation է (էջի URL), վերադարձնում ենք  ցանցի բացակայության HTML հաղորդագրություն
           if (event.request.mode === "navigate") {
             return new Response(
               "<h1>Դուք ցանցից անջատված եք</h1><p>Խնդրում ենք ստուգել կապը և կրկին փորձել։</p>",
               { headers: { "Content-Type": "text/html" } }
             );
           }
-        
-          // For non-navigate requests (e.g. analytics), just return nothing or fail silently
+
+          // Մնացած դեպքերում ոչինչ չվերադարձնել
           return;
         });
-        
     })
   );
 });
