@@ -2,66 +2,62 @@
 <html lang="en">
 
 <head>
-
 	<title>Pet Taxi Armenia</title>
   
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="Reliable and comfortable pet transportation service across Armenia. Safe, timely, and caring." />
+	<meta name="theme-color" content="#ff9800" />
   
-	<meta property="og:title" content="Blog Pet Taxi Armenia" />
-	<meta property="og:description" content="Learn more blog Pet Taxi Armenia and our commitment to providing safe and comfortable transportation for your pets." />
+	<!-- Open Graph -->
+	<meta property="og:title" content="Pet Taxi Armenia" />
+	<meta property="og:description" content="We provide comfortable and safe transportation for pets." />
 	<meta property="og:image" content="http://pettaxi.am/images/logo.png" />
-	<meta property="og:url" content="http://pettaxi.am/blog-singleus2.html" />
+	<meta property="og:url" content="http://pettaxi.am/indexus.html" />
+	<meta property="og:type" content="website" />
   
-	<link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+	<!-- Preconnect for Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
-	<!-- Google Fonts preload + deferred load -->
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" as="style" onload="this.rel='stylesheet'" />
-	<noscript>
-	  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
-	</noscript>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
-	<!-- Font Awesome preload + deferred load -->
-	<link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'" />
+	<!-- Preload main CSS -->
+	<link rel="preload" href="/css/style.css" as="style" />
+	<link rel="stylesheet" href="/css/style.css" />
+  
+	<!-- Defer non-critical CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/animate.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/owl.carousel.min.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/jquery.timepicker.css" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="/css/flaticon.css" media="print" onload="this.media='all'" />
+  
+	<!-- Fallback for non-JS browsers -->
 	<noscript>
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	  <link rel="stylesheet" href="/css/animate.css" />
+	  <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+	  <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+	  <link rel="stylesheet" href="/css/magnific-popup.css" />
+	  <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
+	  <link rel="stylesheet" href="/css/jquery.timepicker.css" />
+	  <link rel="stylesheet" href="/css/flaticon.css" />
 	</noscript>
   
-	<!-- Local CSS files preload + deferred load -->
-	<link rel="preload" href="css/animate.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/animate.css" /></noscript>
-  
-	<link rel="preload" href="css/owl.carousel.min.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/owl.carousel.min.css" /></noscript>
-  
-	<link rel="preload" href="css/owl.theme.default.min.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/owl.theme.default.min.css" /></noscript>
-  
-	<link rel="preload" href="css/magnific-popup.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/magnific-popup.css" /></noscript>
-  
-	<link rel="preload" href="css/bootstrap-datepicker.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/bootstrap-datepicker.css" /></noscript>
-  
-	<link rel="preload" href="css/jquery.timepicker.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/jquery.timepicker.css" /></noscript>
-  
-	<link rel="preload" href="css/flaticon.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/flaticon.css" /></noscript>
-  
-	<link rel="preload" href="css/style.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="css/style.css" /></noscript>
-  
-	<!-- PWA Meta Tags -->
-	<meta name="theme-color" content="#ff9800" />
+	<!-- Icons & PWA -->
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/images/logo192.png" />
 	<link rel="manifest" href="/manifest.json" />
   
-	<!-- iOS specific -->
+	<!-- iOS PWA -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	<meta name="apple-mobile-web-app-title" content="Pet Taxi" />
-  
   </head>
   
 
