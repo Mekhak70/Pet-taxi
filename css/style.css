@@ -14259,6 +14259,18 @@ textarea.form-control {
   stroke-linecap: round;
 }
 
+.logo {
+  width: 170px; 
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    width:110px;
+  }
+}
+
+
 @-webkit-keyframes loader-rotate {
   100% {
     -webkit-transform: rotate(360deg);
@@ -14306,3 +14318,4 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+
