@@ -1,4 +1,4 @@
-const CACHE_NAME = "pettaxi-cache-v70"; // << ամեն թարմացման ժամանակ փոխիր version-ը
+const CACHE_NAME = "pettaxi-cache-v7"; // փոխիր version ամեն deploy-ի ժամանակ
 
 const urlsToCache = [
   "/",
@@ -44,8 +44,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
-  // Անմիջապես ակտիվացնի նոր service worker
-  self.skipWaiting();
+  self.skipWaiting(); // Նոր SW-ն անմիջապես ակտիվանա
 });
 
 // --- ACTIVATE ---
@@ -61,8 +60,14 @@ self.addEventListener("activate", (event) => {
       )
     )
   );
-  // Նոր SW-ն անմիջապես կառաջնորդի բոլոր clients
   self.clients.claim();
+
+  // Ակտիվանալուց հետո բոլոր բացված clients-ին ուղարկում ենք refresh հրաման
+  self.clients.matchAll({ type: "window" }).then((clients) => {
+    clients.forEach((client) => {
+      client.navigate(client.url); // ավտոմատ refresh
+    });
+  });
 });
 
 // --- FETCH ---
@@ -73,7 +78,6 @@ self.addEventListener("fetch", (event) => {
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request)
         .then((networkResponse) => {
-          // Վերահսկում ենք որ պատասխանն OK լինի
           if (
             !networkResponse ||
             networkResponse.status !== 200 ||
@@ -82,7 +86,6 @@ self.addEventListener("fetch", (event) => {
             return networkResponse;
           }
 
-          // Թարմացնենք cache-ը նոր response-ով
           const cloned = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, cloned).catch(() => {});
@@ -90,8 +93,7 @@ self.addEventListener("fetch", (event) => {
 
           return networkResponse;
         })
-        .catch((err) => {
-          console.warn("SW fetch failed:", event.request.url, err);
+        .catch(() => {
           if (event.request.mode === "navigate") {
             return new Response(
               "<h1>Դուք ցանցից անջատված եք</h1><p>Ստուգեք կապը և նորից փորձեք։</p>",
@@ -100,15 +102,7 @@ self.addEventListener("fetch", (event) => {
           }
         });
 
-      // Եթե cache կա՝ ցույց է տալիս cache-ը, բայց ֆոնում քաշում է նոր տարբերակը
       return cachedResponse || fetchPromise;
     })
   );
-});
-
-// --- UPDATE LOGIC ---
-// Երբ նոր service worker կա, ինքը կսկսի աշխատել անմիջապես
-self.addEventListener("controllerchange", () => {
-  // Կարող ես օգտագործողի համար refresh անել
-  window.location.reload();
 });
