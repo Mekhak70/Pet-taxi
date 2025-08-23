@@ -1,4 +1,4 @@
-const CACHE_NAME = "pettaxi-cache-v11";
+const CACHE_NAME = "pettaxi-cache-v7";
 
 const urlsToCache = [
   "/",
