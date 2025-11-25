@@ -338,10 +338,6 @@ legend {
   z-index: 999999;
 }
 
-
-
-
-
 .cake_banner {
   width: 100%;
   height: 100%;    
@@ -14334,7 +14330,7 @@ textarea.form-control {
   }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   .cake_banner_box {
     width: 100%;
@@ -14348,4 +14344,4 @@ textarea.form-control {
     left: 0;
     z-index: 999999;
   }
-} */
+}
