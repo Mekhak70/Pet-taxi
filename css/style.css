@@ -325,6 +325,7 @@ legend {
   color: inherit;
   white-space: normal;
 }
+
 .cake_banner_box {
   width: 100%;
   height: 150px;
@@ -3782,7 +3783,10 @@ input[type="button"].btn-block {
     right: 0;
     left: auto;
   }
+
 }
+
+
 
 @media (min-width: 992px) {
   .dropdown-menu-lg-right {
@@ -14328,5 +14332,21 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cake_banner_box {
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/bannerbig.jpg);
+    background-position: bottom;
+    background-size: contain;     
+    background-repeat: no-repeat; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
   }
 }
